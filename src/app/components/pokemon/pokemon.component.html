@@ -1,0 +1,26 @@
+<div *ngIf="parametre.name == 'C3PO'">
+    <mat-card-title>
+        <img [src]="parametre.image" style="width: 100%; height: auto;"><br/>
+    </mat-card-title>
+</div>
+<div *ngIf="parametre.name != 'C3PO'">
+    <mat-card-title>
+        <img [src]="parametre.image"><br/>
+        <h3 style="text-align: center; margin-bottom: 0px;">{{parametre.name | uppercase}}</h3>
+    </mat-card-title>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>Numéro : {{parametre.id | number: '3.0'}}</mat-list-item>
+            <mat-list-item>Categorie : {{parametre.category}}</mat-list-item>
+            <mat-list-item>Type : {{parametre.types.join(' - ')}} </mat-list-item>
+            <mat-list-item>Taille :&nbsp;<span *ngIf="parametre.height;else na">{{parametre.height | currency:'EUR':'m':'1.0-3'}}</span></mat-list-item>
+            <mat-list-item>Poids :&nbsp;<span *ngIf="parametre.weight;else na">{{parametre.weight | currency:'EUR':'Kg':'1.0-3'}}</span></mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-footer>
+        <button mat-raised-button (click)="sendNameToFather(parametre.name)">SELECTIONNEZ</button>
+    </mat-card-footer>
+    
+    <ng-template #na>N/A</ng-template>
+</div>
+

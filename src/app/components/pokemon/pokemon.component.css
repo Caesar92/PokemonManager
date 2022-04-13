@@ -1,0 +1,34 @@
+.mat-card-title {
+    display: grid;
+    justify-content: center;
+}
+
+.mat-card-content {
+    margin: 0px;
+}
+
+.mat-list-item {
+    border-bottom: 1px solid gray;
+}
+
+img {
+    margin: auto;
+    height: 100px;
+    width: auto;
+}
+
+.mat-card-footer {
+    margin: 0;
+    display: flex;
+    justify-content: end;
+    margin-right: 1%;
+}
+
+.mat-card-footer .mat-raised-button {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: transparent !important;
+    border: 1px solid gray;
+    box-shadow: none !important;
+}
+

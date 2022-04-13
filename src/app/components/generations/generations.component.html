@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-card-title>{{listTitle}}</mat-card-title>
+    <mat-card-content>
+      <mat-selection-list [multiple]="false">
+        <mat-list-option *ngFor="let g of generations" 
+          [ngStyle]="{'background': 'url('+g.image+')'}"
+          (click)="goToPokemons()">
+          Génération {{g.gen}} - {{g.name}}
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-card-content>
+</mat-card>

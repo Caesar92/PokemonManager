@@ -1,0 +1,49 @@
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    overflow-y: hidden;
+}
+
+.main-card {
+    width: 70%;
+    margin-left: 2%;
+    padding-bottom: 5%;
+    height: 90vh;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.search-card {
+    width: 20%;
+    margin-left: 2%;
+    background-color: rgba(255, 255, 255, 0.75);
+    max-height: 90vh;
+}
+
+.search-card .mat-raised-button {
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 4%;
+}
+
+.search-card .mat-error {
+    font-size: 14px;
+}
+
+.main-card-content {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3%;
+}
+
+.sub-card {
+    width: 25%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2% !important;
+    padding: 0px;
+    padding-top: 24px;
+}
+

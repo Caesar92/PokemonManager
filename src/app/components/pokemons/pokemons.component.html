@@ -1,0 +1,54 @@
+<div class="content">
+    <mat-card class="search-card">
+        <mat-card-title>Recherche</mat-card-title>
+        <mat-card-content>
+            <form method="post" [formGroup]="pokemonFilter" 
+                (ngSubmit)="pokemonFilter.valid && sendPokemonFilter(pokemonFilter.value)"
+                >
+                <mat-form-field appearance="outline" style="width: 100%; height: 100px;">
+                    <mat-label>Nom de Pokémon</mat-label>
+                    <input matInput 
+                        [class.is-invalid]="name.invalid" 
+                        [class.is-valid]="name.valid"
+                        type="text" name="name" formControlName="name">
+                    <mat-icon matSuffix>search</mat-icon>
+                    <mat-error *ngIf="name.invalid" class="error-message">
+                        Merci de saisir un nom valide !
+                    </mat-error>  
+                </mat-form-field>
+
+
+                <button mat-raised-button color="warn" type="reset" (click)="resetPokemonFilter()">Effacer</button>
+                <button 
+                    mat-raised-button 
+                    color="primary" 
+                    type="submit" 
+                    class="btn btn-primary mt-2"
+                    [disabled]=" pokemonFilter.invalid"
+                    >
+                        Envoyer
+                </button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="main-card">
+        <mat-card-title>{{listTitle}}</mat-card-title>
+        <p style="margin:0px">Nombre de Pokémon en base : {{this.pokedex.length}}</p>
+        <p style="margin:0px">Dans quel ordre : 
+            <a (click)="this.order = 'ASC'" [style]="{'text-decoration': this.order == 'ASC' ? 'underline' : 'none'}">CROISSANT</a> |
+            <a (click)="this.order = 'DESC'" [style]="{'text-decoration': this.order == 'DESC' ? 'underline' : 'none'}">DECROISSANT</a> 
+        </p>
+        <p style="margin:0px">Pokemon selectionné : {{selectedPokemon}}</p>
+        <mat-card-content class="main-card-content">
+            <div class="sub-card" *ngFor="let p of pokedex | sortByPokedex:order">
+                <mat-card *ngIf="p.name.toLowerCase().includes(nameFilter)" [ngStyle]="getColortype(p)">
+                    <app-pokemon 
+                        [parametre]="p" 
+                        (unEvenement)="receptionMessage($event)">
+                    </app-pokemon>
+                </mat-card>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+

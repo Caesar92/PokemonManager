@@ -1,0 +1,31 @@
+.mat-card {
+    width: 50%;
+    margin-left: 25%;
+    padding:0 !important;
+  }
+  
+  .mat-card-title {
+    background-color: black !important;
+    color: white;
+    padding:10px !important;
+    margin-bottom: 0px;
+  }
+  
+  .mat-card-content{
+    padding:5px !important;
+  }
+  
+  
+  .mat-list-option{
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 100% auto !important;
+    height: 100px !important;
+  
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+    font-size: 24px;
+    color: rgb(243, 214, 31) !important;
+    text-align: center;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000;
+  }
